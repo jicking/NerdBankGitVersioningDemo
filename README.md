@@ -1,3 +1,4 @@
+
 # GitVersioningDemo
 ## Local Builds
 1. Get Assembly Product Version and show it on home page
@@ -46,9 +47,19 @@
 	click Save and Queue
 10. Pipeline runs and artifacts should now have the semver.
 
-## Release Version
-11. 
+## Managing Release Version
+11. As you have noticed, our semver has 'BETA'. 
+	What if we reached the point where we are ready to for a stable release?
+	Good thing **nbgv** has it covered for us too.
+	On master branch.
+	```
+	nbgv prepare-release
+	```
+	This will create a **new branch for release** (eg: v1.0.2)
+	Increment our semver on **master branch** (eg: v1.0.3-beta)
 	
+	We can then use the **new branch for release**  to run builds for deployment
+	and go on development with the incremented semver **master branch**.
 	   
 ## Refs
 https://github.com/dotnet/Nerdbank.GitVersioning/blob/main/doc/nbgv-cli.md
