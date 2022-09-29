@@ -1,0 +1,16 @@
+﻿@page
+@using System.Reflection
+@using System.Diagnostics
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    Assembly assembly = Assembly.GetExecutingAssembly();
+    FileVersionInfo fileVersionInfo = FileVersionInfo.GetVersionInfo(assembly.Location);
+    string version = fileVersionInfo.ProductVersion;
+}
+
+<div class="text-center">
+    <h1 class="display-4">V@(version)</h1>
+    <p>Fancy text here for Feature A</p>
+    <p>Another Fancy text here for Feature A</p>
+</div>
